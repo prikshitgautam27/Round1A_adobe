@@ -53,17 +53,14 @@ Accepts PDF files (max 50 pages each) from the `/app/input` directory inside the
 ### 🏗️ Build Docker Image
 Bash
 ```
-docker build --platform linux/amd64 -t pdf-outline-extractor:<unique_tag> .
+docker build --platform linux/amd64 -t pdf-outline-extractor:latest .
 ```
 ## ▶️ Run Container
 
 Bash
 ```
-docker run --rm \
-  -v $(pwd)/input:/app/input \
-  -v $(pwd)/output_jsons:/app/output \
-  --network none \
-  pdf-outline-extractor:<unique_tag>
+docker run --rm -v "${PWD}\input:/app/input" -v "${PWD}\output_jsons:/app/output" --network none pdf-outline-extractor:latest
+
 ```
 This will process all .pdf files in the input/ folder and generate .json output files in output_jsons/.
 
