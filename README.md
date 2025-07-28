@@ -63,21 +63,23 @@ docker run --rm \
   pdf-outline-extractor:<unique_tag>
 This will process all .pdf files in the input/ folder and generate .json output files in output_jsons/.
 
-📦 Dependencies & Design
-Key Libraries
-PyMuPDF (fitz) for PDF parsing
+---
 
-re and collections for heading structure detection
+## 📦 Dependencies & Design
 
-Design Considerations
-No internet access: All models and libraries are bundled locally.
+### Key Libraries
 
-Model size constraint: No model exceeds the 200MB limit.
+-   **PyMuPDF (fitz)** for PDF parsing
+-   **re** and **collections** for heading structure detection
 
-Execution speed: Processes a 50-page PDF in < 10 seconds.
+### Design Considerations
 
-Avoids font-size-only heuristics: Uses a combination of size, position, and hierarchy logic.
+-   **No internet access**: All models and libraries are bundled locally.
+-   **Model size constraint**: No model exceeds the 200MB limit.
+-   **Execution speed**: Processes a 50-page PDF in < 10 seconds.
+-   **Avoids font-size-only heuristics**: Uses a combination of size, position, and hierarchy logic.
 
+---
 ✅ Compliance
 Requirement	Status
 Docker + AMD64	✅
