@@ -48,21 +48,23 @@ Accepts PDF files (max 50 pages each) from the `/app/input` directory inside the
     { "level": "H3", "text": "History of AI", "page": 3 }
   ]
 }
-🐳 Docker Instructions
-🏗️ Build Docker Image
+```
+## 🐳 Docker Instructions
+### 🏗️ Build Docker Image
 Bash
-
+```
 docker build --platform linux/amd64 -t pdf-outline-extractor:<unique_tag> .
 ▶️ Run Container
+```
 Bash
-
+```
 docker run --rm \
   -v $(pwd)/input:/app/input \
   -v $(pwd)/output_jsons:/app/output \
   --network none \
   pdf-outline-extractor:<unique_tag>
 This will process all .pdf files in the input/ folder and generate .json output files in output_jsons/.
-
+```
 ---
 
 ## 📦 Dependencies & Design
@@ -79,14 +81,16 @@ This will process all .pdf files in the input/ folder and generate .json output 
 -   **Execution speed**: Processes a 50-page PDF in < 10 seconds.
 -   **Avoids font-size-only heuristics**: Uses a combination of size, position, and hierarchy logic.
 
----
-✅ Compliance
-Requirement	Status
-Docker + AMD64	✅
-No Internet Calls	✅
-CPU-only	✅
-<200MB Models	✅
-Executes in <10s	✅
+## ✅ Compliance
+
+| Requirement         | Status |
+|---------------------|--------|
+| Docker + AMD64      | ✅     |
+| No Internet Calls   | ✅     |
+| CPU-only            | ✅     |
+| <200MB Models       | ✅     |
+| Executes in <10s    | ✅     |
+
 
 Export to Sheets
 📝 Notes
